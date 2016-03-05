@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block header %}
+    <meta charset="utf-8">
+    <title>Sixteen</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/static/microphone/microphone.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" media="screen" rel="stylesheet">
+    <link href="/static/css/common.css" media="screen" rel="stylesheet">
+	{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html"><img alt="logo" class="img-rounded" height=
+        "auto" id="logo" src="image/logo.png" width="150px"></a>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" class=
+                "navbar-toggle collapsed" data-target="#navbar" data-toggle=
+                "collapse" type="button"><span class="sr-only">Toggle
+                navigation</span> <span class="icon-bar"></span> <span class=
+                "icon-bar"></span> <span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="./index.html">　　　Sixteen　　　</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./lessons.html">Lessons</a>
+                    </li>
+                    <li>
+                        <a href="./requirements.html">System Requirements</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href=""><span aria-hidden="true" class=
+                        "glyphicon glyphicon-log-in"></span> Singin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="col-sm-3 hidden-xs">
+                <div id="sidebar_header">
+                    <div>
+                        <a href="./lessons.html"><span aria-hidden="true"
+                        class="glyphicon glyphicon-search"></span> Search Lessons</a>
+                    </div>
+                </div>
+                <div id="sidebar_body">
+                    <div>
+                        <a href="./lessons/office/office.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> Office</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/shopping/shopping.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> Shopping</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/restaurant/restaurant.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> Restaurant</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/school/school.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> School</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/date/date.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> Date</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/hospital/hospital.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> Hospital</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/house/house.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> House</a>
+                    </div>
+                    <div>
+                        <a href="./lessons/daily/daily.html"><span aria-hidden="true" class=
+                        "glyphicon glyphicon-triangle-right"></span> Daily</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- main -->
+            <div class="col-sm-9">
+			    {% block main %}{% endblock %}
+            </div>
+        </div>
+    </div>
+	{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script src="/static/js/bootstrap.min.js">
+    </script>
+	{% endblock %}
+</body>
+</html>
