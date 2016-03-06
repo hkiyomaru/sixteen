@@ -9,9 +9,13 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/lesson')
-def lesson():
-    return render_template('lesson.html')
+@app.route('/lesson/')
+@app.route('/lesson/<lessonname>')
+def lesson(lessonname=None):
+    if lessonname:
+        return render_template(lessonname+".html")
+    else:
+        return render_template('lesson.html')
 
 @app.route('/requirement')
 def requirement():
