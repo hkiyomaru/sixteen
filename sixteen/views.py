@@ -11,7 +11,10 @@ def about():
 
 @app.route('/lesson/')
 @app.route('/lesson/<lessonname>')
-def lesson(lessonname=None):
+@app.route('/lesson/<lessonname>/<lessonno>')
+def lesson(lessonname=None, lessonno=None):
+    if lessonname and lessonno:
+        return render_template(lessonname+lessonno+".html")
     if lessonname:
         return render_template(lessonname+".html")
     else:
