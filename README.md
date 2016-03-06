@@ -8,7 +8,7 @@ Sixteen is the application to learn English by speaking English.
 
 This product is writen in Python2.7.9.
 
-Install all dependence by this command.
+This command provides all dependence.
 
 ```
 $ pip install -r requirements.txt
