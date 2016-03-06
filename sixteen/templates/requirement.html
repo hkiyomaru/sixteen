@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h3><span aria-hidden="true" class=
+          "glyphicon glyphicon-hand-right"></span> System
+  Requirements</h3>
+<table class="table table-striped table-bordered table-hover">
+  <tbody>
+    <tr>
+      <td class="text-center">環境</td>
+      <td>インターネットに接続されている必要があります。</td>
+    </tr>
+    <tr>
+      <td  class="text-center">ブラウザ</td>
+      <td>
+        WebRTC対応ブラウザ (Firefox, Google Chrome,
+        Opera)をお使いください。<br>
+        <p class="text-muted">※Internet
+          ExplorerおよびSafariをお使いの方はブラウザをお切換えください。</p>JavaScriptが有効化されている必要があります。
+      </td>
+    </tr>
+    <tr>
+      <td class="text-center">その他</td>
+      <td>マイクロフォンがコンピュータに接続されている必要があります。</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
