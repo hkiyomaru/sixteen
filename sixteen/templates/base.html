@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="./index.html"><img alt="logo" class="img-rounded" height=
+        <a href={{url_for('index')}}><img alt="logo" class="img-rounded" height=
         "auto" id="logo" src="/static/images/logo.png" width="150px"></a>
     </div>
     <nav class="navbar navbar-default">
@@ -23,21 +23,21 @@
                 "collapse" type="button"><span class="sr-only">Toggle
                 navigation</span> <span class="icon-bar"></span> <span class=
                 "icon-bar"></span> <span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="./index.html">　　　Sixteen　　　</a>
+                <a class="navbar-brand" href={{url_for('index')}}>　　　Sixteen　　　</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="./index.html">Home</a>
+                        <a href={{url_for('index')}}>Home</a>
                     </li>
                     <li>
-                        <a href="./about.html">About</a>
+                        <a href={{url_for('about')}}>About</a>
                     </li>
                     <li>
-                        <a href="./lessons.html">Lessons</a>
+                        <a href={{url_for('lesson')}}>Lessons</a>
                     </li>
                     <li>
-                        <a href="./requirements.html">System Requirements</a>
+                        <a href={{url_for('requirement')}}>System Requirements</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -57,7 +57,7 @@
             <div class="col-sm-3 hidden-xs">
                 <div id="sidebar_header">
                     <div>
-                        <a href="./lessons.html"><span aria-hidden="true"
+                        <a href={{url_for('lesson')}}><span aria-hidden="true"
                         class="glyphicon glyphicon-search"></span> Search Lessons</a>
                     </div>
                 </div>
