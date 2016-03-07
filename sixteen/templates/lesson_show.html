@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="col-sm-9">
+  <h3><span aria-hidden="true" class=
+            "glyphicon glyphicon-hand-right"></span> Daily</h3>
+  <div class="pretest">
+    <h4><span aria-hidden="true" class=
+              "glyphicon glyphicon-pencil"></span>  Pretest</h4>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='0')}}><span aria-hidden="true"
+									   class=
+									   "glyphicon glyphicon-triangle-right"></span>　プレテスト</a>
+      </div>
+      <div class="panel-body">
+        <p>まずはプレテストを受講し、今の実力を確認しましょう。</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='0')}}><span aria-hidden=
+															   "true" class=
+															   "glyphicon glyphicon-ok"></span>　プレテストを始める</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="cource">
+    <h4><span aria-hidden="true" class=
+              "glyphicon glyphicon-pencil"></span>  Lessons</h4>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='1')}}><span aria-hidden="true" class=
+								  "glyphicon glyphicon-triangle-right"></span>{% block q1_title %}{% endblock %}</a>
+      </div>
+      <div class="panel-body">
+        <p>{% block q1_summary %}{% endblock %}</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='1')}}><span aria-hidden=
+														  "true" class=
+														  "glyphicon glyphicon-ok"></span>　レッスンを始める</a></p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='2')}}><span aria-hidden="true" class=
+								  "glyphicon glyphicon-triangle-right"></span>{% block q2_title %}{% endblock %}</a>
+      </div>
+      <div class="panel-body">
+        <p>{% block q2_summary %}{% endblock %}</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='2')}}><span aria-hidden="true" class=
+														  "glyphicon glyphicon-ok"></span>　レッスンを始める</a></p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='3')}}><span aria-hidden="true" class=
+								  "glyphicon glyphicon-triangle-right"></span>{% block q3_title %}{% endblock %}</a>
+      </div>
+      <div class="panel-body">
+        <p>{% block q3_summary %}{% endblock %}</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='3')}}><span aria-hidden="true" class=
+														  "glyphicon glyphicon-ok"></span>　レッスンを始める</a></p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='4')}}><span aria-hidden="true" class=
+								  "glyphicon glyphicon-triangle-right"></span>{% block q4_title %}{% endblock %}</a>
+      </div>
+      <div class="panel-body">
+        <p>{% block q4_summary %}{% endblock %}</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='4')}}><span aria-hidden="true" class=
+														  "glyphicon glyphicon-ok"></span>　レッスンを始める</a></p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='5')}}><span aria-hidden="true" class=
+								  "glyphicon glyphicon-triangle-right"></span>{% block q5_title %}{% endblock %}</a>
+      </div>
+      <div class="panel-body">
+        <p>{% block q5_summary %}{% endblock %}</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='5')}}><span aria-hidden="true" class=
+														  "glyphicon glyphicon-ok"></span>　レッスンを始める</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="test">
+    <h4><span aria-hidden="true" class=
+              "glyphicon glyphicon-pencil"></span>  Test</h4>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <a href={{url_for('lesson', lessonname=lessonname, lessonno='6')}}><span aria-hidden="true"
+									class=
+									"glyphicon glyphicon-triangle-right"></span>　確認テスト</a>
+      </div>
+      <div class="panel-body">
+        <p>ここまでのレッスンをよく思い出して実力を発揮しましょう。</p>
+        <p style="text-align: right"><a href=
+										{{url_for('lesson', lessonname=lessonname, lessonno='6')}}><span aria-hidden=
+															"true" class=
+															"glyphicon glyphicon-ok"></span>　テストを始める</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
