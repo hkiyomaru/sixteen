@@ -14,9 +14,9 @@ def about():
 @app.route('/lesson/<lessonname>/<lessonno>')
 def lesson(lessonname=None, lessonno=None):
     if lessonname and lessonno:
-        return render_template(lessonname+lessonno+".html")
+        return render_template(lessonname+lessonno+".html", lessonname=lessonname, lessonno=lessonno)
     if lessonname:
-        return render_template(lessonname+".html")
+        return render_template(lessonname+".html", lessonname=lessonname)
     else:
         return render_template('lesson.html')
 
