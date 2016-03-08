@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% block header %}
     <meta charset="utf-8">
     <title>Sixteen</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="/static/microphone/microphone.min.css" rel="stylesheet">
     <link href="/static/css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link href="/static/css/common.css" media="screen" rel="stylesheet">
-	{% endblock %}
 </head>
 <body>
     <div class="container">
@@ -108,6 +106,8 @@
     </script>
     <script src="/static/js/bootstrap.min.js">
     </script>
+	{% endblock %}
+	{% block extrajs %}
 	{% endblock %}
 </body>
 </html>

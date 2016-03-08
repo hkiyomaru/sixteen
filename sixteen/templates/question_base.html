@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><span aria-hidden="true" class=
+								  "glyphicon glyphicon-paperclip"></span>{% block q_title %}{% endblock %}</h3>
+  </div>
+  <div class="panel-body">
+    {% block q_body %}
+	{% endblock %}
+    <div class="question">
+      <div style="margin-left: 2em">
+		{% block question %}
+        {% endblock %}
+      </div>
+    </div>
+    <div class="speakbutton">
+      <center>
+        <div id="microphone"></div>
+      </center>
+    </div>
+    <div class="modal fade" id="answer" role="dialog" aria-labelledby="answerLabal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-label="Close" class=
+                    "close" data-dismiss="modal" type=
+                    "button"><span aria-hidden=
+                                   "true">&times;</span></button>
+            <h3 class="modal-title" id=
+                "modal-title">Answer</h3>
+          </div>
+          <div class="modal-body">
+			{% block answer %}
+			{% endblock %}
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default"
+                    data-dismiss="modal" type=
+                    "button">Close</button>
+			<button class="btn btn-primary" onclick="next()" type="button">Next Lesson</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <center>
+      <p id="result"></p>
+    </center>
+    <center>
+      <p class="text-danger" id="info"></p>
+    </center>
+    <center>
+      <p class="text-danger" id="error"></p>
+    </center>
+    <center>
+      <button type="button" class="btn btn-primary" id="answer-btn" data-toggle="modal" data-target="#answer" style="visibility: hidden;">
+        解説を見る
+      </button>
+    </center>
+  </div>
+</div>
+<nav>
+  <ul class="pager">
+	{% if lessonno != 0 %}
+    <li class="previous"><a href={{url_for('lesson', lessonname=lessonname, lessonno=lessonno|int-1)}}><span aria-hidden="true">&larr;</span> Prev</a></li>
+	{% endif %}
+	{% if lessonno != 6 %}
+    <li class="next"><a href={{url_for('lesson', lessonname=lessonname, lessonno=lessonno|int+1)}}>Next <span aria-hidden="true">&rarr;</span></a></li>
+	{% endif %}
+  </ul>
+</nav>
+{% endblock %}
+
+{% block extrajs %}
+<script src="/static/microphone/microphone.min.js">
+</script>
+<script src="/static/js/qcommon.js">
+</script>
+<script>
+function next(){
+location.href="{{ url_for('lesson', lessonname=lessonname, lessonno=lessonno|int+1) }}"
+}
+</script>
+<script>
+  mic.onresult = function (intent, entities) {
+  if(intent=="{{ lessonname }}{% block correct %}{% endblock %}"){
+  failure = 0;
+  document.getElementById("modal-title").innerHTML = "Correct Answer!";
+  document.getElementById("modal-title").style.color = "red";
+  jQuery('.modal').modal('show');
+  }else if(intent=="{{ lessonname }}{% block incorrect %}{% endblock %}"){
+  failure = 0;
+  document.getElementById("modal-title").innerHTML = "Incorrect Answer!";
+  document.getElementById("modal-title").style.color = "blue";
+  jQuery('.modal').modal('show');
+  }else{
+  document.getElementById("result").innerHTML = "聞き取れませんでした。もう一度話してください。";
+  if(++failure >= 3){
+  document.getElementById("result").innerHTML = "連続して認識に失敗しました。答えを見る場合は下のボタンを押してください。";
+  document.getElementById("modal-title").innerHTML = "Answer";
+  var btn = document.getElementById("answer-btn");
+  btn.style.visibility = "";
+  }
+  }
+  };
+</script>
+{% endblock %}
