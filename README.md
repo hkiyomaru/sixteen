@@ -1,14 +1,13 @@
-#Sixteen
+# Sixteen
 
-##What is Sixteen
+## What is Sixteen
 
-Sixteen is the application to learn English by speaking English.
+Sixteen is an application to learn English by speaking English.
 
-##Instruction
+## Instruction
 
-This product is writen in Python2.7.9.
-
-This command provides all dependence.
+This app is writen in Python2.7.9.
+Run the following command to install dependent packages.
 
 ```
 $ pip install -r requirements.txt
